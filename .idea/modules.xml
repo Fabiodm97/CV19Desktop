@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DeskApplication.iml" filepath="$PROJECT_DIR$/.idea/DeskApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeskApplication.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DeskApplication.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeskApplication.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DeskApplication.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gruppo59.DeskApplication.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gruppo59.DeskApplication.main.iml" />
+    </modules>
+  </component>
+</project>
