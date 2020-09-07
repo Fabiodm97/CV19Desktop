@@ -42,13 +42,13 @@ public class FXMLRichiesteCancellazioneController implements Initializable {
     private URL location;
 
     @FXML
-    private TableView<RichiesteCancellazione> tablecancellazioni;
+    private TableView<RichiesteCancellazione> tableRichiestecancellazione;
 
     @FXML
     private TableColumn<?, ?> email;
 
     @FXML
-    private TableColumn<?, ?> username;
+    private TableColumn<?, ?> nickname;
 
     @FXML
     private TableColumn<?, ?> motivazione;
@@ -102,7 +102,7 @@ public class FXMLRichiesteCancellazioneController implements Initializable {
             aggiorna_valutazione_struttura(struttura);
         }
         Documents_richieste.remove(id_richiesta);
-        tablecancellazioni.getItems().remove(richiesta_selezionata);
+        tableRichiestecancellazione.getItems().remove(richiesta_selezionata);
         richiesta_selezionata = null;
         riga_selezionata = -1;
         JOptionPane.showMessageDialog(null,"Utente eliminato");
@@ -205,7 +205,7 @@ public class FXMLRichiesteCancellazioneController implements Initializable {
             ex.printStackTrace();
         }
 
-        username.setCellValueFactory(new PropertyValueFactory<>("Nickname"));
+        nickname.setCellValueFactory(new PropertyValueFactory<>("Nickname"));
         motivazione.setCellValueFactory(new PropertyValueFactory<>("Motivazione"));
         email.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
@@ -219,12 +219,12 @@ public class FXMLRichiesteCancellazioneController implements Initializable {
             Documents_richieste.add(document.getId());
             observableList.add(new RichiesteCancellazione(document.getString("email"), document.getString("motivazione"), document.getString("nickname")));
         }
-        tablecancellazioni.setItems(observableList);
-        tablecancellazioni.setOnMousePressed(new EventHandler<MouseEvent>() {
+        tableRichiestecancellazione.setItems(observableList);
+        tableRichiestecancellazione.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                riga_selezionata = tablecancellazioni.getSelectionModel().getSelectedIndex();
-                richiesta_selezionata = tablecancellazioni.getSelectionModel().getSelectedItem();
+                riga_selezionata = tableRichiestecancellazione.getSelectionModel().getSelectedIndex();
+                richiesta_selezionata = tableRichiestecancellazione.getSelectionModel().getSelectedItem();
 
             }
         });

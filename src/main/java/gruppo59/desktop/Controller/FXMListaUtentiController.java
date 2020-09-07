@@ -45,7 +45,7 @@ public class FXMListaUtentiController implements Initializable {
     private TableView<Iscritti> tabella;
 
     @FXML
-    private TableColumn<?, ?> username;
+    private TableColumn<?, ?> nickname;
 
     @FXML
     private TableColumn<?, ?> cognome;
@@ -54,7 +54,7 @@ public class FXMListaUtentiController implements Initializable {
     private TableColumn<?, ?> nome;
 
     @FXML
-    private TableColumn<?,?> iscrizione;
+    private TableColumn<?,?> permessi;
 
 
     public void clickabilita(javafx.event.ActionEvent actionEvent) {
@@ -75,7 +75,7 @@ public class FXMListaUtentiController implements Initializable {
             }else{
                 UserRecord.UpdateRequest request= new UserRecord.UpdateRequest(id_utente).setDisabled(false);
                 mAuth.updateUser(request);
-                utente_selezionato.setStatus("Abilitato");
+                utente_selezionato.setPermessi("Abilitato");
                 tabella.getItems().set(riga_selezionata,utente_selezionato);
                 JOptionPane.showMessageDialog(null,"L'utente è stato abilitato");
 
@@ -107,7 +107,7 @@ public class FXMListaUtentiController implements Initializable {
             }else{
                 UserRecord.UpdateRequest request= new UserRecord.UpdateRequest(id_utente).setDisabled(true);
                 mAuth.updateUser(request);
-                utente_selezionato.setStatus("Sospeso");
+                utente_selezionato.setPermessi("Sospeso");
                 tabella.getItems().set(riga_selezionata,utente_selezionato);
                 JOptionPane.showMessageDialog(null,"L'utente è stato sospeso");
 
@@ -133,21 +133,21 @@ public class FXMListaUtentiController implements Initializable {
             ex.printStackTrace();
         }
 
-        username.setCellValueFactory(new PropertyValueFactory<>("Username"));
+        nickname.setCellValueFactory(new PropertyValueFactory<>("Nickname"));
         cognome.setCellValueFactory(new PropertyValueFactory<>("Cognome"));
         nome.setCellValueFactory(new PropertyValueFactory<>("Nome"));
-        iscrizione.setCellValueFactory(new PropertyValueFactory<>("Iscrizione"));
+        permessi.setCellValueFactory(new PropertyValueFactory<>("Permessi"));
 
         ObservableList<Iscritti> observableList = FXCollections.observableArrayList();
 
         List<QueryDocumentSnapshot> documents = querySnapshot.getDocuments();
         id_utenti = new LinkedList<>();
-        String status;
+        String permessi;
 
         for (QueryDocumentSnapshot document : documents) {
             id_utenti.add(document.getString("idUtente"));
-            status = getUserStatus(document.getString("idUtente"));
-            observableList.add(new Iscritti(document.getString("nome"),document.getString("cognome"),document.getString("username"),status));
+            permessi = getUserPermessi(document.getString("idUtente"));
+            observableList.add(new Iscritti(document.getString("nome"),document.getString("cognome"),document.getString("nickname"),permessi));
         }
         tabella.setItems(observableList);
         tabella.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -159,18 +159,18 @@ public class FXMListaUtentiController implements Initializable {
         });
     }
 
-    public String getUserStatus(String idUtente) {
-        String status = " ";
+    public String getUserPermessi(String idUtente) {
+        String permessi = " ";
         try {
             if(!mAuth.getUser(idUtente).isDisabled()){
-                status = "Abilitato";
+                permessi = "Attivato";
             }else{
-                status = "Sospeso";
+                permessi = "Sospeso";
             }
         } catch (FirebaseAuthException e) {
             e.printStackTrace();
         }
-        return status;
+        return permessi;
     }
 
 

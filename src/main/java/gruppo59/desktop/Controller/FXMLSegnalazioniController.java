@@ -48,7 +48,7 @@ public class FXMLSegnalazioniController implements Initializable {
     private TableView<Segnalazioni> tablesegnalazioni;
 
     @FXML
-    private TableColumn<?, ?> username;
+    private TableColumn<?, ?> nickname;
 
     @FXML
     private TableColumn<?, ?> struttura;
@@ -203,7 +203,7 @@ public class FXMLSegnalazioniController implements Initializable {
             ex.printStackTrace();
         }
 
-        username.setCellValueFactory(new PropertyValueFactory<>("nickname"));
+        nickname.setCellValueFactory(new PropertyValueFactory<>("nickname"));
         struttura.setCellValueFactory(new PropertyValueFactory<>("struttura"));
         testo.setCellValueFactory(new PropertyValueFactory<>("testo"));
 

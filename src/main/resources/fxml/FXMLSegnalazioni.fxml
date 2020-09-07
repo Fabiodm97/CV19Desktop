@@ -28,7 +28,7 @@
     </Button>
     <TableView fx:id="tablesegnalazioni" layoutX="69.0" layoutY="115.0" prefHeight="319.0" prefWidth="656.0">
       <columns>
-          <TableColumn fx:id="username" prefWidth="125.0" style="-fx-background-color: #ACE8C0;" text="Username"/>
+          <TableColumn fx:id="nickname" prefWidth="125.0" style="-fx-background-color: #ACE8C0;" text="Nickname"/>
           <TableColumn fx:id="struttura" prefWidth="170.0" style="-fx-background-color: #ACE8C0;" text="Struttura"/>
           <TableColumn fx:id="testo" prefWidth="357.0" style="-fx-background-color: #ACE8C0;" text="Testo"/>
       </columns>

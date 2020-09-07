@@ -6,12 +6,12 @@ public class RichiesteCancellazione  {
 
     private SimpleStringProperty Email;
     private SimpleStringProperty Motivazione;
-    private SimpleStringProperty Username;
+    private SimpleStringProperty Nickname;
 
-    public RichiesteCancellazione(String email, String motivazione, String username) {
+    public RichiesteCancellazione(String email, String motivazione, String nickname) {
         Email = new SimpleStringProperty(email);
         Motivazione =new SimpleStringProperty(motivazione);
-        Username = new SimpleStringProperty(username);
+        Nickname = new SimpleStringProperty(nickname);
     }
 
     public String getEmail() {
@@ -38,15 +38,15 @@ public class RichiesteCancellazione  {
         this.Motivazione.set(motivazione);
     }
 
-    public String getUsername() {
-        return Username.get();
+    public String getNickname() {
+        return Nickname.get();
     }
 
-    public SimpleStringProperty usernameProperty() {
-        return Username;
+    public SimpleStringProperty nicknameProperty() {
+        return Nickname;
     }
 
-    public void setUsername(String nickname) {
-        this.Username.set(nickname);
+    public void setNickname(String nickname) {
+        this.Nickname.set(nickname);
     }
 }

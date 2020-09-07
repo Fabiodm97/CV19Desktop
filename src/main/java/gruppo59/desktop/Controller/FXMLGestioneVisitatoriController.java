@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 public class FXMLGestioneVisitatoriController {
 
 
+
     @FXML
     private ResourceBundle resources;
 
@@ -18,17 +19,17 @@ public class FXMLGestioneVisitatoriController {
     private URL location;
 
     @FXML
-    private Button btniscritti;
+    private Button btnIscritti;
 
     @FXML
-    private Button btnsegnalazioni;
+    private Button btnSegnalazioni;
 
     @FXML
-    private Button btncancellazioni;
+    private Button btnrichiesteCancellazione;
 
     @FXML
-    void clickRichiestaCancellazione(ActionEvent event) {
-        GestioneVisitatori.clickRichiesteCancellazione();
+    void clickRichiesteCancellazione(ActionEvent event) {
+        GestioneVisitatori.clickrichiesteCancellazione();
     }
 
     @FXML

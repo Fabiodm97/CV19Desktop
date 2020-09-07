@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import javax.swing.*;
 
 public class DesktopApplication extends Application {
-    private static Stage GestioneVisitatori = null;
     private static Stage Login=null;
     private static GestioneVisitatori GestioneVisitatoriController;
 
@@ -42,7 +41,7 @@ public class DesktopApplication extends Application {
         try {
             options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                    .setDatabaseUrl("https://consigliaviaggi2019-ad0e1.firebaseio.com\"")
+                    .setDatabaseUrl("consigliaviaggi2019-ad0e1.firebaseio.com\"")
                     .build();
         } catch (IOException ex) {
 
@@ -101,12 +100,12 @@ public class DesktopApplication extends Application {
         try {
 
             FXMLLoader loader = getFxml("FXMLGestioneVisitatori");
-            GestioneVisitatori = loadStage(loader);
+            Stage gestioneVisitatori = loadStage(loader);
 
             //  GestioneVisitatoriController = loader.getController();
             closeLogin();
-            GestioneVisitatori.setTitle("Gestione Visitatori");
-            GestioneVisitatori.show();
+            gestioneVisitatori.setTitle("Gestione Visitatori");
+            gestioneVisitatori.show();
         }
         catch (Exception e) {
             System.out.println(e);

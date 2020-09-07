@@ -51,7 +51,7 @@ public class FXMLSchermataPrincipaleController {
             Firestore db = FirestoreClient.getFirestore();
 
             ApiFuture<QuerySnapshot> query = db.collection("Utenti")
-                    .whereEqualTo("idUtente","2h7jkYKHJ1WG066gXGv6HVDZB9m1")
+                    .whereEqualTo("idUtente","Go3leDhSV1TTPh96uNnQ0H7KNW92")
                     .get();
 
             QuerySnapshot querySnapshot = null;
@@ -65,7 +65,7 @@ public class FXMLSchermataPrincipaleController {
 
             List<QueryDocumentSnapshot> documents = querySnapshot.getDocuments();
             for (QueryDocumentSnapshot document : documents) {
-                if(document.getString("idUtente").equals("2h7jkYKHJ1WG066gXGv6HVDZB9m1")){
+                if(document.getString("idUtente").equals("Go3leDhSV1TTPh96uNnQ0H7KNW92")){
                     if(document.getBoolean("admin")){
                         JOptionPane.showMessageDialog(null,"Accesso riuscito");
                         flag=true;

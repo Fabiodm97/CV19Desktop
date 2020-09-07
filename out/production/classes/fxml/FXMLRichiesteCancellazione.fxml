@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo59.desktop.Controller.FXMLRichiesteCancellazioneController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="600.0" stroke="#18592e" strokeType="INSIDE" width="800.0" />
+        <Button layoutX="548.0" layoutY="501.0" mnemonicParsing="false" onAction="#confermaclicked" prefHeight="30.0" prefWidth="223.0" style="-fx-background-color: #ACE8C0;" text="CONFERMA" textFill="#18592e">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tableRichiestecancellazione" layoutX="82.0" layoutY="104.0" prefHeight="351.0" prefWidth="635.0">
+            <columns>
+                <TableColumn fx:id="email" prefWidth="192.79998779296875" style="-fx-background-color: #ACE8C0;" text="E-mail" />
+                <TableColumn fx:id="nickname" prefWidth="190.4000244140625" style="-fx-background-color: #ACE8C0;" text="Nickname" />
+                <TableColumn fx:id="motivazione" prefWidth="279.199951171875" style="-fx-background-color: #ACE8C0;" text="Motivazione" />
+            </columns>
+        </TableView>
+      <Text fill="#18592e" layoutX="164.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Richieste di Cancellazione" textAlignment="CENTER" wrappingWidth="471.27227783203125">
+         <font>
+            <Font name="Arial" size="36.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

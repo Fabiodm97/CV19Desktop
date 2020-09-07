@@ -6,12 +6,12 @@ public class Segnalazioni {
 
     private SimpleStringProperty Struttura;
     private SimpleStringProperty Testo;
-    private SimpleStringProperty Username;
+    private SimpleStringProperty Nickname;
 
-    public Segnalazioni(String username, String struttura, String testo) {
+    public Segnalazioni(String nickname, String struttura, String testo) {
         Testo = new SimpleStringProperty(testo);
         Struttura = new SimpleStringProperty(struttura);
-        Username = new SimpleStringProperty(username);
+        Nickname = new SimpleStringProperty(nickname);
     }
 
     @Override
@@ -20,7 +20,7 @@ public class Segnalazioni {
         if(o.getClass() != Segnalazioni.class) return false;
         Segnalazioni other = (Segnalazioni)o;
 
-        return Username.get().equals(other.Username.get()) && Testo.get().equals(other.Testo.get()) && Struttura.get().equals(other.Struttura.get());
+        return Nickname.get().equals(other.Nickname.get()) && Testo.get().equals(other.Testo.get()) && Struttura.get().equals(other.Struttura.get());
 
     }
 
@@ -49,14 +49,14 @@ public class Segnalazioni {
     }
 
     public String getNickname() {
-        return Username.get();
+        return Nickname.get();
     }
 
     public SimpleStringProperty nicknameProperty() {
-        return Username;
+        return Nickname;
     }
 
     public void setNickname(String nickname) {
-        this.Username.set(nickname);
+        this.Nickname.set(nickname);
     }
 }

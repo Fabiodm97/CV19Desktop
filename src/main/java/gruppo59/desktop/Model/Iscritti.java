@@ -1,30 +1,31 @@
 package gruppo59.desktop.Model;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.TableColumn;
 
 public class Iscritti {
     private SimpleStringProperty Nome;
     private SimpleStringProperty Cognome;
-    private SimpleStringProperty Username;
-    private SimpleStringProperty Status;
+    private SimpleStringProperty Nickname;
+    private SimpleStringProperty Permessi;
 
-    public Iscritti(String nome,String cognome,String username,String status){
+    public Iscritti(String nome, String cognome, String nickname, String permessi){
         Nome = new SimpleStringProperty(nome);
         Cognome = new SimpleStringProperty(cognome);
-        Username = new SimpleStringProperty(username);
-        Status = new SimpleStringProperty(status);
+        Nickname = new SimpleStringProperty(nickname);
+        Permessi = new SimpleStringProperty(permessi);
     }
 
-    public String getStatus() {
-        return Status.get();
+    public String getPermessi() {
+        return Permessi.get();
     }
 
-    public SimpleStringProperty statusProperty() {
-        return Status;
+    public SimpleStringProperty permessiProperty() {
+        return Permessi;
     }
 
-    public void setStatus(String status) {
-        this.Status.set(status);
+    public void setPermessi(String permessi) {
+        this.Permessi.set(permessi);
     }
 
     public String getNome() {
@@ -52,14 +53,14 @@ public class Iscritti {
     }
 
     public String getNickname() {
-        return Username.get();
+        return Nickname.get();
     }
 
-    public SimpleStringProperty nicknameProperty() {
-        return Username;
+    public SimpleStringProperty nicknameroperty() {
+        return Nickname;
     }
 
     public void setNickname(String nickname) {
-        this.Username.set(nickname);
+        this.Nickname.set(nickname);
     }
 }

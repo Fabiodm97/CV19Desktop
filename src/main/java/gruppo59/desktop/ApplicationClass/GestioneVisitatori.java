@@ -16,6 +16,7 @@ public class GestioneVisitatori {
 
 
     public static void clicksegnalazioni() {
+
         show_segnalazioni();
     }
 
@@ -25,12 +26,12 @@ public class GestioneVisitatori {
 
     }
 
-    public static void clickRichiesteCancellazione() {
-        show_RichiestaCancellazione();
+    public static void clickrichiesteCancellazione() {
+
+        show_richiesteCancellazione();
     }
 
-    private static void show_RichiestaCancellazione() {
-    }
+
 
 
     private static void show_iscritti(){
@@ -50,14 +51,14 @@ public class GestioneVisitatori {
 
     }
 
-    private static void show_RichiesteCancellazione(){
+    private static void show_richiesteCancellazione(){
         try {
 
-            FXMLLoader loader = getFxml("FXMLCancellazioni");
+            FXMLLoader loader = getFxml("FXMLRichiesteCancellazione");
             RichiesteCancellazione = loadStage(loader);
 
             //  GestioneVisitatoriController = loader.getController();
-            RichiesteCancellazione.setTitle("Richieste canzallazione utente");
+            RichiesteCancellazione.setTitle("Richieste cancellazione utente");
             RichiesteCancellazione.show();
         }
         catch (Exception e) {
@@ -93,11 +94,5 @@ public class GestioneVisitatori {
     }
 
 
-    public static Stage getRichiestaCancellazione() {
-        return RichiesteCancellazione;
-    }
 
-    public static void setRichiestaCancellazione(Stage richiestaCancellazione) {
-        RichiesteCancellazione = richiestaCancellazione;
-    }
 }
