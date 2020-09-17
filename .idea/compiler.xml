@@ -6,8 +6,8 @@
       <module name="consigliaviaggi19.main" target="1.8" />
       <module name="consigliaviaggi19.test" target="1.8" />
       <module name="DeskApplication" target="1.8" />
-      <module name="DeskApplication.main" target="1.8" />
       <module name="DeskApplication.test" target="1.8" />
+      <module name="gruppo59.consigliaviaggi19.main" target="1.8" />
       <module name="gruppo59.DeskApplication.main" target="1.8" />
     </bytecodeTargetLevel>
   </component>

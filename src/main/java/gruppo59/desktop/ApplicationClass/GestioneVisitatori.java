@@ -9,10 +9,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
 public class GestioneVisitatori {
     private static Stage Iscritti;
-    private static Stage  Segnalazioni;
+    private static Stage Segnalazioni;
     private static Stage RichiesteCancellazione;
+    protected static GestioneVisitatori GestioneVisitatoriController;
 
 
     public static void clicksegnalazioni() {
@@ -32,26 +34,24 @@ public class GestioneVisitatori {
     }
 
 
-
-
-    private static void show_iscritti(){
+    private static void show_iscritti() {
         try {
 
-            FXMLLoader loader = getFxml("FXMListaUtenti");
+            FXMLLoader loader = getFxml("FXMLIscritti");
             Iscritti = loadStage(loader);
 
             //  GestioneVisitatoriController = loader.getController();
             Iscritti.setTitle("Utenti iscritti");
             Iscritti.show();
-        }
-        catch (Exception e) {
+
+        } catch (Exception e) {
             System.out.println(e);
         }
 
 
     }
 
-    private static void show_richiesteCancellazione(){
+    private static void show_richiesteCancellazione() {
         try {
 
             FXMLLoader loader = getFxml("FXMLRichiesteCancellazione");
@@ -60,15 +60,15 @@ public class GestioneVisitatori {
             //  GestioneVisitatoriController = loader.getController();
             RichiesteCancellazione.setTitle("Richieste cancellazione utente");
             RichiesteCancellazione.show();
-        }
-        catch (Exception e) {
+
+        } catch (Exception e) {
             System.out.println(e);
         }
 
 
     }
 
-    private static void show_segnalazioni(){
+    private static void show_segnalazioni() {
         try {
 
             FXMLLoader loader = getFxml("FXMLSegnalazioni");
@@ -77,11 +77,12 @@ public class GestioneVisitatori {
             //  GestioneVisitatoriController = loader.getController();
             Segnalazioni.setTitle("Recensioni segnalate");
             Segnalazioni.show();
-        }
-        catch (Exception e) {
+
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
+
 
     private static FXMLLoader getFxml(String name) throws FileNotFoundException {
         return new FXMLLoader(new Resource(String.format("fxml/%s.fxml", name)).toURL());
@@ -93,6 +94,30 @@ public class GestioneVisitatori {
         return stage;
     }
 
+    public static void closeIscritti() {
+        if (Iscritti != null) {
+            Iscritti.close();
+        } else {
+            Iscritti = null;
+        }
+    }
+
+    public static void closeSegnalazioni() {
+        if (Segnalazioni != null) {
+            Segnalazioni.close();
+        } else {
+            Segnalazioni = null;
+        }
+    }
 
 
+
+    public static void closeRichiesteCancellazione() {
+        if (RichiesteCancellazione != null) {
+            RichiesteCancellazione.close();
+        } else {
+
+            RichiesteCancellazione = null;
+        }
+    }
 }

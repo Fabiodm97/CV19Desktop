@@ -3,7 +3,7 @@ package gruppo59.desktop.ApplicationClass;
 public class Launcher {
 
     public static void main(String[] args) {
-        DesktopApplication.main(args);
+        Accesso.main(args);
     }
 }
 
